@@ -498,13 +498,11 @@ class _HeroCard extends StatelessWidget {
                     label: Text(stage.label),
                     selected: selectedStage == stage,
                     selectedColor: Colors.white,
-                    labelStyle: TextStyle(
-                      color: selectedStage == stage
-                          ? scheme.primary
-                          : Colors.white,
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),
-                    backgroundColor: Colors.white.withValues(alpha: 0.16),
+                    backgroundColor: Colors.white.withValues(alpha: 0.35),
                     onSelected: (_) => onStageSelected(stage),
                   ),
                 )
@@ -518,20 +516,12 @@ class _HeroCard extends StatelessWidget {
                 .map(
                   (issueItem) => ChoiceChip(
                     label: Text(issueItem.shortLabel),
-                    avatar: Icon(
-                      issueItem.icon,
-                      size: 18,
-                      color: selectedIssue == issueItem
-                          ? scheme.primary
-                          : Colors.white,
-                    ),
+                    avatar: Icon(issueItem.icon, size: 18, color: Colors.black),
                     selected: selectedIssue == issueItem,
                     selectedColor: Colors.white,
-                    backgroundColor: Colors.white.withValues(alpha: 0.16),
-                    labelStyle: TextStyle(
-                      color: selectedIssue == issueItem
-                          ? scheme.primary
-                          : Colors.white,
+                    backgroundColor: Colors.white.withValues(alpha: 0.3),
+                    labelStyle: const TextStyle(
+                      color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),
                     onSelected: (_) => onIssueSelected(issueItem),
@@ -544,13 +534,13 @@ class _HeroCard extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.14),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Text(
               'Estágio atual: ${selectedStage.label}',
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w600,
               ),
             ),
